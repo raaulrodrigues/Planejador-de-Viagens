@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planejador de Viagem IA</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100%22><text y=%22.9em%22 font-size=%2290%22>✈️</text></svg>">
+    <link rel="stylesheet" href="style.css?v=1.9">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <header class="sidebar-header">
+            <h2><i class="bx bxs-compass"></i> Planejador</h2>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round"></div>
+                </label>
+            </div>
+        </header>
+
+        <form id="trip-form" class="sidebar-form">
+            <div class="form-group">
+                <label for="destination"><i class="bx bxs-map"></i> Destino:</label>
+                <input type="text" id="destination" placeholder="Ex: Paris" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="days"><i class="bx bxs-calendar"></i> Duração (dias):</label>
+                <input type="number" id="days" min="1" placeholder="Ex: 5" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="interests"><i class="bx bxs-heart"></i> Interesses:</label>
+                <input type="text" id="interests" placeholder="Ex: arte, comida, praias" required>
+            </div>
+
+            <div class="form-group">
+                <label for="travel-type"><i class="bx bxs-user"></i> Tipo de Viagem:</label>
+                <select id="travel-type" required>
+                    <option value="Sozinho">Sozinho</option>
+                    <option value="Casal">Casal</option>
+                    <option value="Família com crianças">Família com crianças</option>
+                    <option value="Amigos">Amigos</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="budget"><i class="bx bxs-dollar-circle"></i> Orçamento:</label>
+                <select id="budget" required>
+                    <option value="Econômico (Mochilão)">Econômico (Mochilão)</option>
+                    <option value="Moderado">Moderado</option>
+                    <option value="Luxo (Sem Limites)">Luxo (Sem Limites)</option>
+                </select>
+            </div>
+            
+            <button type="submit" id="generate-btn">
+                <span class="btn-text">Gerar Roteiro</span>
+                <div class="btn-spinner hidden"></div>
+            </button>
+        </form>
+    </aside>
+
+    <main class="content-area">
+        <div id="result-container">
+            <div id="itinerary"></div>
+        </div>
+
+        <div id="welcome-message" class="welcome-container visible">
+            <i class="bx bxs-paper-plane"></i>
+            <h3>Seu roteiro aparecerá aqui</h3>
+            <p>Preencha os campos ao lado e clique em "Gerar Roteiro" para começar.</p>
+        </div>
+    </main>
+
+    <script src="script.js?v=1.9"></script>
+</body>
+</html>
